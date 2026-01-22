@@ -1169,6 +1169,23 @@ footer .copyright{
 	fill:#202020;
 	transition: all 0.3s ease;
 }
+.theme-toggle .moon-icon{
+	display:none;
+}
+
+/* Responsive positioning for theme toggle */
+@media(max-width:768px){
+	.theme-toggle{
+		right:70px;
+		top:18px;
+		width:40px;
+		height:40px;
+	}
+	.theme-toggle svg{
+		width:20px;
+		height:20px;
+	}
+}
 
 /* Dark Mode Styles */
 body.dark-mode{
