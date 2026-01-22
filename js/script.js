@@ -185,4 +185,42 @@ $(function(){
 
 	});
 
+
+	/*========================================
+		Dark Mode Toggle
+	==========================================*/
+	var $themeToggle = $('#theme-toggle'),
+		$sunIcon = $('.sun-icon'),
+		$moonIcon = $('.moon-icon');
+
+	// Check for saved theme preference or default to light mode
+	if( typeof Storage != 'undefined' ){
+		var theme = window.localStorage.getItem('theme');
+		if(theme === 'dark'){
+			$body.addClass('dark-mode');
+			$sunIcon.hide();
+			$moonIcon.show();
+		}
+	}
+
+	// Toggle theme on button click
+	$themeToggle.on('click', function(e){
+		e.preventDefault();
+		$body.toggleClass('dark-mode');
+		
+		if($body.hasClass('dark-mode')){
+			$sunIcon.hide();
+			$moonIcon.show();
+			if( typeof Storage != 'undefined' ){
+				window.localStorage.setItem('theme', 'dark');
+			}
+		}else{
+			$sunIcon.show();
+			$moonIcon.hide();
+			if( typeof Storage != 'undefined' ){
+				window.localStorage.setItem('theme', 'light');
+			}
+		}
+	});
+
 });
