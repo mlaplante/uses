@@ -195,9 +195,9 @@ $(function(){
 		hasLocalStorage = typeof Storage !== 'undefined';
 
 	// Check for saved theme preference or default to light mode
-	if(hasLocalStorage){
+	if( hasLocalStorage ){
 		var theme = window.localStorage.getItem('theme');
-		if(theme === 'dark'){
+		if( theme === 'dark' ){
 			$body.addClass('dark-mode');
 			$sunIcon.hide();
 			$moonIcon.show();
@@ -209,16 +209,16 @@ $(function(){
 		e.preventDefault();
 		$body.toggleClass('dark-mode');
 		
-		if($body.hasClass('dark-mode')){
+		if( $body.hasClass('dark-mode') ){
 			$sunIcon.hide();
 			$moonIcon.show();
-			if(hasLocalStorage){
+			if( hasLocalStorage ){
 				window.localStorage.setItem('theme', 'dark');
 			}
 		}else{
 			$sunIcon.show();
 			$moonIcon.hide();
-			if(hasLocalStorage){
+			if( hasLocalStorage ){
 				window.localStorage.setItem('theme', 'light');
 			}
 		}
